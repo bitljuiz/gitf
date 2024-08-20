@@ -49,7 +49,6 @@ const (
 	Languages
 	Exclude
 	RestrictTo
-	OnlyProgramming
 	flagCount
 
 	BooleanFlag
@@ -59,28 +58,26 @@ const (
 
 var (
 	flagToName = map[int]string{
-		Repository:      "repository",
-		Revision:        "revision",
-		OrderBy:         "order-by",
-		UseCommitter:    "use-committer",
-		Format:          "format",
-		Extensions:      "extensions",
-		Languages:       "languages",
-		Exclude:         "exclude",
-		RestrictTo:      "restrict-to",
-		OnlyProgramming: "only-programming",
+		Repository:   "repository",
+		Revision:     "revision",
+		OrderBy:      "order-by",
+		UseCommitter: "use-committer",
+		Format:       "format",
+		Extensions:   "extensions",
+		Languages:    "languages",
+		Exclude:      "exclude",
+		RestrictTo:   "restrict-to",
 	}
 	flagToShorthandName = map[int]string{
-		Repository:      "p",
-		Revision:        "v",
-		OrderBy:         "o",
-		UseCommitter:    "u",
-		Format:          "f",
-		Extensions:      "x",
-		Languages:       "l",
-		Exclude:         "c",
-		RestrictTo:      "r",
-		OnlyProgramming: "g",
+		Repository:   "p",
+		Revision:     "v",
+		OrderBy:      "o",
+		UseCommitter: "u",
+		Format:       "f",
+		Extensions:   "x",
+		Languages:    "l",
+		Exclude:      "c",
+		RestrictTo:   "r",
 	}
 	flagToUsage = map[int]string{
 		Repository:   "Returns path to Git repository. Current directory by default",
@@ -90,34 +87,31 @@ var (
 		Format:       "Sets output format. Could be tabular (default), csv, json, json-lines",
 		Extensions: "Reduces the number of extensions processed. " +
 			"A comma separated list of extensions is accepted as input",
-		Languages:       "Reduces the number of languages processed. A comma separated list of languages is accepted as input",
-		Exclude:         "Reduces the number of files processed by Glob patterns, like 'foo/*, bar/*'",
-		RestrictTo:      "Reduces the number of files processed, excluding those who don't satisfy any of Glob patterns",
-		OnlyProgramming: "Returns information only about files written in programming language",
+		Languages:  "Reduces the number of languages processed. A comma separated list of languages is accepted as input",
+		Exclude:    "Reduces the number of files processed by Glob patterns, like 'foo/*, bar/*'",
+		RestrictTo: "Reduces the number of files processed, excluding those who don't satisfy any of Glob patterns",
 	}
 	flagToValueType = map[int]int{
-		Repository:      StringFlag,
-		Revision:        StringFlag,
-		OrderBy:         StringFlag,
-		UseCommitter:    BooleanFlag,
-		Format:          StringFlag,
-		Extensions:      StringSliceFlag,
-		Languages:       StringSliceFlag,
-		Exclude:         StringSliceFlag,
-		RestrictTo:      StringSliceFlag,
-		OnlyProgramming: BooleanFlag,
+		Repository:   StringFlag,
+		Revision:     StringFlag,
+		OrderBy:      StringFlag,
+		UseCommitter: BooleanFlag,
+		Format:       StringFlag,
+		Extensions:   StringSliceFlag,
+		Languages:    StringSliceFlag,
+		Exclude:      StringSliceFlag,
+		RestrictTo:   StringSliceFlag,
 	}
 	flagToDefaultValue = map[int]interface{}{
-		Repository:      ".",
-		Revision:        "HEAD",
-		OrderBy:         "lines",
-		UseCommitter:    false,
-		Format:          "tabular",
-		Extensions:      []string{},
-		Languages:       []string{},
-		Exclude:         []string{},
-		RestrictTo:      []string{},
-		OnlyProgramming: false,
+		Repository:   ".",
+		Revision:     "HEAD",
+		OrderBy:      "lines",
+		UseCommitter: false,
+		Format:       "tabular",
+		Extensions:   []string{},
+		Languages:    []string{},
+		Exclude:      []string{},
+		RestrictTo:   []string{},
 	}
 )
 

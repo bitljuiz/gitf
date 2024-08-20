@@ -18,7 +18,7 @@ type LanguageJSON struct {
 	Extensions []string
 }
 
-func LimitExtensions(files, languages, extensions []string, onlyProgramming bool) ([]string, error) {
+func LimitExtensions(files, languages, extensions []string) ([]string, error) {
 	if len(extensions) == 0 && len(languages) == 0 {
 		return files, nil
 	}

@@ -88,9 +88,8 @@ func Run() {
 
 	languages, _ := flagsMap[flags.Languages].GetStringSlice()
 	extensions, _ := flagsMap[flags.Extensions].GetStringSlice()
-	onlyProgramming, _ := flagsMap[flags.OnlyProgramming].GetBool()
 
-	requiredFiles, err := configs.LimitExtensions(files3, languages, extensions, onlyProgramming)
+	requiredFiles, err := configs.LimitExtensions(files3, languages, extensions)
 
 	if err != nil {
 		fmt.Println(err)
